@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.git_not_command import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.git_not_command import match, get_new_command
+from thedang.types import Command
 
 
 @pytest.fixture

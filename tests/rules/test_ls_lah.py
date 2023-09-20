@@ -1,5 +1,5 @@
-from thefuck.rules.ls_lah import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.ls_lah import match, get_new_command
+from thedang.types import Command
 
 
 def test_match():

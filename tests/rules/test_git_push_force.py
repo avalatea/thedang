@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.git_push_force import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.git_push_force import match, get_new_command
+from thedang.types import Command
 
 
 git_err = '''

@@ -1,7 +1,7 @@
 import pytest
 
-from thefuck.rules.python_module_error import get_new_command, match
-from thefuck.types import Command
+from thedang.rules.python_module_error import get_new_command, match
+from thedang.types import Command
 
 
 @pytest.fixture

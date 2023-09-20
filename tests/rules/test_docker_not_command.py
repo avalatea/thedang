@@ -1,7 +1,7 @@
 import pytest
 from io import BytesIO
-from thefuck.types import Command
-from thefuck.rules.docker_not_command import get_new_command, match
+from thedang.types import Command
+from thedang.rules.docker_not_command import get_new_command, match
 
 
 _DOCKER_SWARM_OUTPUT = '''

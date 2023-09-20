@@ -1,7 +1,7 @@
 import pytest
 
-from thefuck.rules.conda_mistype import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.conda_mistype import match, get_new_command
+from thedang.types import Command
 
 
 @pytest.fixture

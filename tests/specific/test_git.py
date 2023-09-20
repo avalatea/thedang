@@ -1,6 +1,6 @@
 import pytest
-from thefuck.specific.git import git_support
-from thefuck.types import Command
+from thedang.specific.git import git_support
+from thedang.types import Command
 
 
 @pytest.mark.parametrize('called, command, output', [

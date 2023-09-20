@@ -1,14 +1,14 @@
 import pytest
-from thefuck.types import Command
-from thefuck.rules.brew_update_formula import get_new_command, match
+from thedang.types import Command
+from thedang.rules.brew_update_formula import get_new_command, match
 
 
 output = ("Error: This command updates brew itself, and does not take formula"
-          " names.\nUse `brew upgrade thefuck`.")
+          " names.\nUse `brew upgrade thedang`.")
 
 
 def test_match():
-    command = Command('brew update thefuck', output)
+    command = Command('brew update thedang', output)
     assert match(command)
 
 

@@ -1,5 +1,5 @@
 import pytest
-from thefuck import logs
+from thedang import logs
 
 
 def test_color(settings):

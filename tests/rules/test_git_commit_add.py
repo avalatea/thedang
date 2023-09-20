@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.git_commit_add import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.git_commit_add import match, get_new_command
+from thedang.types import Command
 
 
 @pytest.mark.parametrize(

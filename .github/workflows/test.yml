@@ -28,7 +28,7 @@ jobs:
             ${{ env.pythonLocation }}/lib/*
             ${{ env.pythonLocation }}/scripts/*
           key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('setup.py', 'requirements.txt') }}
-      - name: Install The Fuck with all dependencies
+      - name: Install The Dang with all dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
           pip install -Ur requirements.txt coveralls
@@ -38,13 +38,13 @@ jobs:
         run: flake8
       - name: Run tests
         if: matrix.os != 'ubuntu-latest' || matrix.python-version != env.PYTHON_LATEST
-        run: coverage run --source=thefuck,tests -m pytest -v --capture=sys tests
+        run: coverage run --source=thedang,tests -m pytest -v --capture=sys tests
       - name: Run tests (including functional)
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.PYTHON_LATEST
         run: |
-          docker build -t thefuck/python3 -f tests/Dockerfile --build-arg PYTHON_VERSION=3 .
-          docker build -t thefuck/python2 -f tests/Dockerfile --build-arg PYTHON_VERSION=2 .
-          coverage run --source=thefuck,tests -m pytest -v --capture=sys tests --enable-functional
+          docker build -t thedang/python3 -f tests/Dockerfile --build-arg PYTHON_VERSION=3 .
+          docker build -t thedang/python2 -f tests/Dockerfile --build-arg PYTHON_VERSION=2 .
+          coverage run --source=thedang,tests -m pytest -v --capture=sys tests --enable-functional
       - name: Post coverage results
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.PYTHON_LATEST
         env:
@@ -58,11 +58,11 @@ jobs:
     container: python:${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v2
-      - name: Install The Fuck with all dependencies
+      - name: Install The Dang with all dependencies
         run: |
           pip install -Ur requirements.txt coveralls
           python setup.py develop
       - name: Lint
         run: flake8
       - name: Run tests
-        run: coverage run --source=thefuck,tests -m pytest -v --capture=sys tests
+        run: coverage run --source=thedang,tests -m pytest -v --capture=sys tests

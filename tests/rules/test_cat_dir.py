@@ -1,11 +1,11 @@
 import pytest
-from thefuck.rules.cat_dir import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.cat_dir import match, get_new_command
+from thedang.types import Command
 
 
 @pytest.fixture
 def isdir(mocker):
-    return mocker.patch('thefuck.rules.cat_dir'
+    return mocker.patch('thedang.rules.cat_dir'
                         '.os.path.isdir')
 
 

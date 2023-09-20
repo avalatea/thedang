@@ -1,12 +1,12 @@
 import pytest
-from thefuck.rules.nixos_cmd_not_found import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.nixos_cmd_not_found import match, get_new_command
+from thedang.types import Command
 
 
 @pytest.mark.parametrize('command', [
     Command('vim', 'nix-env -iA nixos.vim')])
 def test_match(mocker, command):
-    mocker.patch('thefuck.rules.nixos_cmd_not_found', return_value=None)
+    mocker.patch('thedang.rules.nixos_cmd_not_found', return_value=None)
     assert match(command)
 
 
@@ -14,7 +14,7 @@ def test_match(mocker, command):
     Command('vim', ''),
     Command('', '')])
 def test_not_match(mocker, command):
-    mocker.patch('thefuck.rules.nixos_cmd_not_found', return_value=None)
+    mocker.patch('thedang.rules.nixos_cmd_not_found', return_value=None)
     assert not match(command)
 
 

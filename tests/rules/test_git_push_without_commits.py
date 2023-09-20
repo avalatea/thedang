@@ -1,5 +1,5 @@
-from thefuck.types import Command
-from thefuck.rules.git_push_without_commits import get_new_command, match
+from thedang.types import Command
+from thedang.rules.git_push_without_commits import get_new_command, match
 
 
 def test_match():

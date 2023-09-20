@@ -1,6 +1,6 @@
 import pytest
-from thefuck.rules.sed_unterminated_s import match, get_new_command
-from thefuck.types import Command
+from thedang.rules.sed_unterminated_s import match, get_new_command
+from thedang.types import Command
 
 
 @pytest.fixture
